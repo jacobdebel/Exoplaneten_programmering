@@ -1,0 +1,46 @@
+# #+title: Exoplaneten
+# #+subtitle: 
+# #+author: 
+# #+date: 
+# # Themes: beige|black|blood|league|moon|night|serif|simple|sky|solarized|white
+# #+reveal_theme: night
+# #+reveal_title_slide: <h2>%t</h2><h3>%s</h3><h4>%a</h4><h4>%d</h4>
+# #+reveal_title_slide_background:
+# #+reveal_default_slide_background:
+# #+reveal_extra_options: slideNumber:"c",progress:true,transition:"slide",navigationMode:"default",history:false,hash:true
+# # #+reveal_extra_attr: style="color:red"
+# #+options: toc:nil num:nil tags:nil timestamp:nil ^:{}
+
+#+title: Programmering B 2022 - 2024
+#+subtitle: Vibenshus Gymnasium
+#+author: Jacob Debel
+#+date: 2022-2024
+#+options: toc:t num:nil tags:t timestamp:nil ^:{}
+# #+setupfile: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+# #+setupfile: ./org-html-themes/org/theme-bigblow-local.setup
+#+setupfile: ./theme-bigblow-local.setup
+# #+setupfile: ./theme-readtheorg-local.setup
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style> p{max-width:800px;}</style>
+#+HTML_HEAD: <style> li{max-width:800px;}</style
+* Introduktion
+Jeres rover er netop landet på exoplaneten. Roverens mission er at udforske omgivelserne og søge efter tegn på liv.
+
+Rumagenturet vil have jer til at designe og implementere nye algoritmer til roveren, så den 
+
+* Mission 1
+#+begin_export html
+<iframe src="https://trinket.io/embed/python/3d8d7ce66b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+end_export
+* Mission 2
+hvorfor er der ikke noget tekst her?
+
+* Mission 3
+
+* Mission 4
+
+* Mission 5
+
+* Mission 6
+
+* Mission 7
