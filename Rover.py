@@ -11,6 +11,8 @@ class Rover(turtle.Turtle):
     def __init__(self):
         super().__init__()
         self.speed(1)
+        self.color(wheel_color)
+        self.pensize(4)
         s = turtle.Shape("compound")
         body = (
             (0, 0),
@@ -26,51 +28,27 @@ class Rover(turtle.Turtle):
             (0, 50),
         )
         s.addcomponent(front, wheel_color, wheel_color)
+        wheels = []
+        for i in range(3):
+            wheel_left_side = (
+                (-11, 2 + 14 * i),
+                (-11, 2 + 14 * i + 10),
+                (-16, 2 + 14 * i + 10),
+                (-16, 2 + 14 * i),
+            )
+            wheels.append(wheel_left_side)
+            wheel_right_side = (
+                (11, 2 + 14 * i),
+                (11, 2 + 14 * i + 10),
+                (16, 2 + 14 * i + 10),
+                (16, 2 + 14 * i),
+            )
+            wheels.append(wheel_right_side)
 
-        wheel_1 = (
-            (-11, 2),
-            (-11, 12),
-            (-16, 12),
-            (-16, 2),
-        )
-        wheel_2 = (
-            (-11, 16),
-            (-11, 26),
-            (-16, 26),
-            (-16, 16),
-        )
-        wheel_3 = (
-            (-11, 30),
-            (-11, 40),
-            (-16, 40),
-            (-16, 30),
-        )
-        wheel_4 = (
-            (11, 2),
-            (11, 12),
-            (16, 12),
-            (16, 2),
-        )
-        wheel_5 = (
-            (11, 16),
-            (11, 26),
-            (16, 26),
-            (16, 16),
-        )
-        wheel_6 = (
-            (11, 30),
-            (11, 40),
-            (16, 40),
-            (16, 30),
-        )
-        s.addcomponent(wheel_1, wheel_color, wheel_color)
-        s.addcomponent(wheel_2, wheel_color, wheel_color)
-        s.addcomponent(wheel_3, wheel_color, wheel_color)
-        s.addcomponent(wheel_4, wheel_color, wheel_color)
-        s.addcomponent(wheel_5, wheel_color, wheel_color)
-        s.addcomponent(wheel_6, wheel_color, wheel_color)
-        turtle.register_shape("myshape", s)
-        self.shape("myshape")
+        for wheel in wheels:
+            s.addcomponent(wheel, wheel_color, wheel_color)
+        turtle.register_shape("rover", s)
+        self.shape("rover")
 
 
 rover = Rover()
