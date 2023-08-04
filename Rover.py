@@ -20,6 +20,13 @@ class Rover(turtle.Turtle):
             (-11, 0),
         )
         s.addcomponent(body, body_color, wheel_color)
+        front = (
+            (-7, 42),
+            (7, 42),
+            (0, 50),
+        )
+        s.addcomponent(front, wheel_color, wheel_color)
+
         wheel_1 = (
             (-11, 2),
             (-11, 12),
@@ -60,10 +67,14 @@ class Rover(turtle.Turtle):
         s.addcomponent(wheel_2, wheel_color, wheel_color)
         s.addcomponent(wheel_3, wheel_color, wheel_color)
         s.addcomponent(wheel_4, wheel_color, wheel_color)
+        s.addcomponent(wheel_5, wheel_color, wheel_color)
+        s.addcomponent(wheel_6, wheel_color, wheel_color)
         turtle.register_shape("myshape", s)
         self.shape("myshape")
 
 
 rover = Rover()
 rover.goto(20, 0)
+rover.left(30)
+rover.forward(100)
 turtle.mainloop()
