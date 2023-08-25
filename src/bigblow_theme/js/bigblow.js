@@ -39,25 +39,25 @@ $(function() {
     }
 });
 
-$(function() {
-    $('<div id="minitoc" class="dontprint"></div>').prependTo('body');
-});
+// $(function() {
+//     $('<div id="minitoc" class="dontprint"></div>').prependTo('body');
+// });
 
 // generate contents of minitoc
-function generateMiniToc(divId) {
-    $('#minitoc').empty().append('<h2>In this section</h2>');
-    $('#' + divId).find('h3').each(function(i) {
-        let pos = $(this).text().search(" ");
-        let text = $(this).text().substring(0, pos);
-        $("#minitoc").append("<a href='#" + $(this).attr("id") + "'>"
-                             + text + "</a>");
-    });
-    // Ensure that the target is expanded (hideShow)
-    $('#minitoc a[href^="#"]').click(function() {
-        var href = $(this).attr('href');
-        hsExpandAnchor(href);
-    });
-}
+// function generateMiniToc(divId) {
+//     $('#minitoc').empty().append('<h2>In this section</h2>');
+//     $('#' + divId).find('h3').each(function(i) {
+//         let pos = $(this).text().search(" ");
+//         let text = $(this).text().substring(0, pos);
+//         $("#minitoc").append("<a href='#" + $(this).attr("id") + "'>"
+//                              + text + "</a>");
+//     });
+//     // Ensure that the target is expanded (hideShow)
+//     $('#minitoc a[href^="#"]').click(function() {
+//         var href = $(this).attr('href');
+//         hsExpandAnchor(href);
+//     });
+// }
 
 // display tabs
 function tabifySections() {
@@ -305,15 +305,15 @@ function togglePanel(e) {
     // return false;
 }
 
-$(function() {
-    $('<div id="left-panel-wrapper" class="dontprint"><div id="left-panel-contents" style="opacity: 0.9"></div><div id="left-panel-button" class="dontprint"><a href="#">Dashboard</a></div></div>')
-        .appendTo('body');
+// $(function() {
+//     $('<div id="left-panel-wrapper" class="dontprint"><div id="left-panel-contents" style="opacity: 0.9"></div><div id="left-panel-button" class="dontprint"><a href="#">Dashboard</a></div></div>')
+//         .appendTo('body');
 
-    $('<div id="right-panel-wrapper" class="dontprint"><div id="right-panel-contents" style="opacity: 0.9"></div></div>')
-        .appendTo('body');
+//     $('<div id="right-panel-wrapper" class="dontprint"><div id="right-panel-contents" style="opacity: 0.9"></div></div>')
+//         .appendTo('body');
 
-    $('#left-panel-button').click(togglePanel);
-});
+//     $('#left-panel-button').click(togglePanel);
+// });
 
 $(function() {
     var ul = $('<ul id="listOfTodo"></ul>').appendTo('#left-panel-contents');

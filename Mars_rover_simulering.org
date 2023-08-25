@@ -1,8 +1,0 @@
-
-#+begin_src python -n :exports both :results output :eval never-export :comments link :tangle mission_1.py
-import turtle
-skaerm = turtle.Screen()
-
-screen.setup(400, 400)
-screen.bgpic
-#+end_src

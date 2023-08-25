@@ -1,21 +1,8 @@
-# #+title: Exoplaneten
-# #+subtitle: 
-# #+author: 
-# #+date: 
-# # Themes: beige|black|blood|league|moon|night|serif|simple|sky|solarized|white
-# #+reveal_theme: night
-# #+reveal_title_slide: <h2>%t</h2><h3>%s</h3><h4>%a</h4><h4>%d</h4>
-# #+reveal_title_slide_background:
-# #+reveal_default_slide_background:
-# #+reveal_extra_options: slideNumber:"c",progress:true,transition:"slide",navigationMode:"default",history:false,hash:true
-# # #+reveal_extra_attr: style="color:red"
-# #+options: toc:nil num:nil tags:nil timestamp:nil ^:{}
-
-#+title: Programmering B 2022 - 2024
+#+title: Kontroller roveren på exoplaneten
 #+subtitle: Vibenshus Gymnasium
-#+author: Jacob Debel
-#+date: 2022-2024
-#+options: toc:t num:nil tags:t timestamp:nil ^:{}
+#+author: 
+#+date: 
+#+options: toc:t num:nil tags:t timestamp:nil ^:{} html-postamble:nil
 # #+setupfile: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
 # #+setupfile: ./org-html-themes/org/theme-bigblow-local.setup
 #+setupfile: ./theme-bigblow-local.setup
@@ -24,23 +11,203 @@
 #+HTML_HEAD: <style> p{max-width:800px;}</style>
 #+HTML_HEAD: <style> li{max-width:800px;}</style
 * Introduktion
-Jeres rover er netop landet på exoplaneten. Roverens mission er at udforske omgivelserne og søge efter tegn på liv.
+Efter opdagelse af exoplaneten og en succesfuld rumrejse der til, er *roveren* netop landet og klar til mission.
 
-Rumagenturet vil have jer til at designe og implementere nye algoritmer til roveren, så den 
+#+attr_html: :width 50%
+[[./img/NASA_Mars_Rover.jpg]]
 
-* Mission 1
+Roverens mission er at udforske omgivelserne og søge efter tegn på liv.
+
+Rumagenturet vil have jer til at designe og implementere nye algoritmer til roveren, så den kan løse missionen. I kan teste jeres algoritmer i roversimulatoren.
+
+* Mission 01
+
+** Afgrænsning af området
+Roveren er landet i et område i nærheden af VG-krateret. Roverens første mission er at afgrænse et kvadratisk areal på 400 m gange 400 m. Roverens ønskede sti er vist med hvid på figuren.
+
+[[./img/mission_01.png]]
+** Roversimulering
+For nu kan roveren forstå følgende instruktioner:
+
+- =rover.forward(afstand)=
+- =rover.left(vinkel)=
+- =rover.right(vinkel)=
+
+I kan f.eks. afprøve følgende instruktioner ved at indsætte dem det passende sted i koden i roversimulatoren:
+
+#+begin_example
+rover.forward(123)
+rover.left(42)
+rover.forward(213)
+#+end_example
+
 #+begin_export html
-<iframe src="https://trinket.io/embed/python/3d8d7ce66b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/9958a3c104" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 #+end_export
-* Mission 2
-hvorfor er der ikke noget tekst her?
+* Mission 02
+** Optimering af koden
 
-* Mission 3
+#+attr_html: :align center :height 300
+[[./img/alfa_centauri.jpg]]
 
-* Mission 4
+De nærmeste stjerner, Alfa Centauri, er beliggende 4.24 lysår, hvilket svarer til 9.4 trillioner km. For at kunne kommunikere med en rover på en exoplanet så langt væk, er det derfor vigtigt at optimere koden, som skal sendes afsted.
 
-* Mission 5
+*Rumagenturet vil altså have jer til at mindske antallet af linjer med kode*. Til at kunne gøre det, kan man f.eks. anvende en /for-løkke/.
 
-* Mission 6
+#+attr_html: :align center :height 300
+[[./img/mission_01.png]]
+*** For-løkker
+For-løkker kan anvendes, når man skal udføre bestemt kode et fast antal gange.
+Hvis man vil printe 3-tabellen ud til skærmen, kan man naivt skrive
 
-* Mission 7
+#+begin_example
+print(3)
+print(6)
+print(9)
+print(12)
+print(15)
+print(18)
+print(21)
+print(24)
+print(27)
+print(30)
+#+end_example
+
+eller kortere med en =for=-løkke
+
+#+begin_example
+for i in range(10):
+    print(3*(i+1))
+#+end_example
+
+Hvilken kode ville I anvende, hvis I skulle sende den til en rover på en fjern exoplanet?
+
+*Omskriv jeres kode fra mission 01, så den bliver så kort som mulig ved at anvende et for-løkke.*
+
+** Roversimulering
+#+begin_export html
+<iframe src="https://trinket.io/embed/python/b684cf03f4" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+end_export
+* Mission 03
+** Udforskning af hele området
+Efter at området er blevet afgrænset, er det nu tid til at lave en detaljeret analyse af det. For at kunne gøre dette, skal roveren passere over alle dele af området. En systematisk måde at gøre dette på, er ved at følge den anviste rute på figuren. *Sørg igen for at optimere koden, så mængden af kode, der skal sendes til roveren er så lille som mulig.*
+
+#+attr_html: :align center :height 300
+[[./img/mission_03.png]]
+
+
+** Roversimulering
+#+begin_export html
+<iframe src="https://trinket.io/embed/python/20a888cf2f" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+end_export
+
+* Mission 04
+** Alternativ rute
+I denne mission skal I implementere en algoritme, så roveren får gennemløbet hele området men gennem en alternativ rute. I kan se ruten på figuren. Igen skal I optimere jeres kode så meget som muligt.
+
+#+attr_html: :align center :height 300
+[[./img/mission_04.png]]
+
+** Roversimulering
+#+begin_export html
+<iframe src="https://trinket.io/embed/python/2d0261ddbe" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+end_export
+
+* Mission 05
+** Undersøgelse af kratere
+Da roveren analyserede hele området i de tidligere missioner, fandt den tre små kratere. Rumagenturet vil gerne have, at I skriver en algoritme, som får roveren til at besøge de tre kratere til nærmere undersøgelse. Ruten roveren skal følge er markeret på kortet.
+
+#+attr_html: :align center :height 300
+[[./img/mission_05.png]]
+
+*** Bonusmission
+Som en bonusmission vil rumagenturet gerne have roveren til at køre i en (halv)cirkel rundt om hver af kraterne, når den møder dem. (Halv)cirklerne skal ligge på ydersiden af den markerede firkant, som roverens rute er markeret med. Til at lave (halv)cirkler kan man benytte metoden =rover.circle(radius, extend)=. 
+
+Her er nogle eksempler.
+
+#+begin_example
+# Tegner en cirkel med radius på 30. Kører mod uret rundt
+rover.circle(30)
+# Tegner en cirkel med radius 50. Kører med uret rundt
+rover.circle(-50)
+# Tegner en halvcirkel med radius på 20, som kører mod uret rundt
+rover.circle(20, 180)
+# Tegner en halvcirkel med radius på 20, som baglæns rundt kører med uret
+rover.circle(20, -180)
+#+end_example
+
+** Roversimulering
+
+#+begin_export html
+<iframe src="https://trinket.io/embed/python/b15d2321a5" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+end_export
+
+
+* Mission 06
+** Pas på kløften!
+Under afsøgningen af landingsområdet har roveren fundet 3 nye kratere, som skal undersøges nærmere. Kraterne er dog placeret i nærheden af en stor kløft, så pas på!
+
+Skriv en algoritme, som får roveren til at besøge de tre kratere uden at komme for tæt på kløften. Efter at have besøgt alle tre kratere skal roveren vende tilbage til sin startposition uden at køre i kløften.
+
+#+attr_html: :align center :height 300
+[[./img/mission_06.png]]
+
+*** Bonusmission
+Som en ekstra udfordring vil rumagenturet gerne have jer til at markere hvert af kraterne med et bogstav. Helt bestemt skal bogstaverne E S A anvendes.
+
+Få roveren til at skrive *E*, *S* og *A* i hvert af kraterne ved hjælp af det spor, roveren skaber efter sig.
+** Roversimulering
+#+begin_export html
+<iframe src="https://trinket.io/embed/python/495da1909f" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+end_export
+
+* Mission 07
+** Automatisk overvågning af området
+
+Indtil nu har roveren kun gjort, hvad I som programmører har beordret den til, altså kørt efter en fastlagt rute/algoritme.
+
+[[./img/mission_01.png]]
+
+I denne mission skal I få roveren til automatisk at overvåge hele området. I skal forestille jer, at roveren bare er ligesom en robotplæneklipper, som I nok allerede kender.
+
+#+attr_html: :align center :height 300
+[[./img/robotplaeneklipper.png]]
+
+De simpleste robotplæneklippere fungerer på følgende måde:
+1. Ved start vælges en tilfældig retning (vinkel) inden for et givent interval.
+2. Herefter køres der ligeud, indtil en kant rammes.
+3. Når en kant rammes, bakkes der tilbage et lille stykke.
+4. Efter bakket vælges endnu en gang en tilfældig retning, og der køres ligeud i denne nye retning.
+
+Herefter gentager punkt 3 til 4 sig.
+
+For at kunne implementere den ønskede algoritme skal I have kendskab til =while=-løkker, =if=-statements samt =tilfældige tal= (random numbers).
+
+Her er et eksempel på brugen af alle tre dele:
+
+#+begin_example 
+import random
+while True:
+    tilfaeldigt_tal = random.uniform(0, 10)
+    if tilfaeldigt_tal > 7:
+        print("Tallet er større end 7")
+        break
+    print("Tilfældigt tal = " + str(tilfaeldigt_tal))
+#+end_example
+
+*** Bonusmission
+Efter lang tids overvågning har man fundet ud af, at der intet er af interesse i det *røde krater*. Derfor er det unødvendigt at overvåge dette.
+
+Udvid algoritmen fra tidligere, så roveren ikke kører ned i krateret. Roveren er udstyret med en LIDAR (LIgt Detection And Ranging), som kan måle afstande fra roveren hen til angivne punkter. Man kan anvende metoden =Rover.distance((20, 30))=, hvis man vil have afstanden mellem roveren og punktet (20, 30).
+
+#+attr_html: :align center :height 300
+[[./img/lidar.webp]]
+** Roversimulering
+#+begin_export html
+<iframe src="https://trinket.io/embed/python/6afe9dc856" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+end_export
+
+# Local Variables:
+# jinx-languages: "da_DK"
+# jinx-local-words: "left"
+# End:
