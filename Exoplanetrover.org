@@ -11,7 +11,7 @@
 #+HTML_HEAD: <style> p{max-width:800px;}</style>
 #+HTML_HEAD: <style> li{max-width:800px;}</style
 * Introduktion
-Efter opdagelse af exoplaneten og en succesfuld rumrejse der til, er *roveren* netop landet og klar til mission.
+Efter opdagelse af exoplaneten og en succesfuld rumrejse dertil, er *roveren* netop landet og klar til mission.
 
 #+attr_html: :width 50%
 [[./img/NASA_Mars_Rover.jpg]]
